@@ -18,7 +18,7 @@ const Sidebar = () => {
   const mode = useSelector((state) => state.theme.mode);
   return (
     <aside
-      className={`mt-16 lg:mt-24 bg-[#2C2C2C] w-full lg:w-1/4 ${
+      className={`mt-8 sm:mt-12 lg:mt-24 bg-[#2C2C2C] w-full lg:w-1/4 ${
         mode === "light" ? "bg-[#EEF6EF]" : ""
       }`}
     >

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addTodo } from "../store/todoSlice";
 import { v4 as uuidV4 } from "uuid";
+import { ArrowDropDown } from "@mui/icons-material";
+import { ArrowDropUp } from "@mui/icons-material";
 
 const TaskInput = () => {
   // task data
@@ -9,6 +11,8 @@ const TaskInput = () => {
     task: "",
     priority: "low",
   });
+
+  const [isMenuOpen,setIsMenuOpen] = useState(false)
 
   const mode = useSelector((state) => state.theme.mode);
 
@@ -37,13 +41,26 @@ const TaskInput = () => {
     });
   };
 
+  const handleMenuChange = () => {
+    setIsMenuOpen(prev => !prev)
+  }
+
   return (
     <section
       className={`mt-4 bg-[#2F3630] p-4 ${
         mode === "light" ? "bg-[#EEF6EF]" : ""
       }`}
     >
-      <form className="flex flex-col gap-2" onSubmit={handleSubmit}>
+        <div onClick={handleMenuChange} className="flex items-center text-green-500 font-semibold transition-all duration-300">
+            <p>To Do</p>
+            {
+                isMenuOpen ? <ArrowDropUp /> : <ArrowDropDown />
+            }
+        </div>
+
+        <hr className="bg-[#49654B2e] h-0.5 border-none mt-2" />
+
+      <form className={`${isMenuOpen ? "flex" : "hidden"} mt-2 flex-col gap-2 transition-all duration-300`} onSubmit={handleSubmit}>
         <label className={`text-base font-semibold`}>Add a task</label>
         <input
           className="p-2 rounded-md outline-green-500 text-slate-950 border-none"
