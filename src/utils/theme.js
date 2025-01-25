@@ -1,31 +1,3 @@
-// import { createTheme } from "@mui/material/styles";
-
-// export const getTheme = (mode) =>
-//     createTheme({
-//         palette: {
-//             mode: mode,
-//             ...(mode === "dark"
-//                 ? {
-//                       background: {
-//                           default: "#181818",
-//                           paper: "#1D1D1D",
-//                       },
-//                       text: {
-//                           primary: "#FFFFFF",
-//                       },
-//                   }
-//                 : {
-//                       background: {
-//                           default: "#FFFFFF",
-//                           paper: "#f4f4f4",
-//                       },
-//                       text: {
-//                           default: "#000000",
-//                           primary: "#000000",
-//                       },
-//                   }),
-//         },
-//     });
 
 import { createTheme } from '@mui/material/styles';
 
