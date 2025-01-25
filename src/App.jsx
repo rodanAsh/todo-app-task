@@ -4,16 +4,16 @@ import { Route, Routes } from 'react-router-dom'
 import Login from './sections/Login'
 import PrivateRoutes from './private-routes/PrivateRoutes'
 import { useSelector } from 'react-redux'
-import { getTheme } from './utils/theme'
 import { CssBaseline, ThemeProvider } from '@mui/material'
+import { lightTheme, darkTheme } from "./utils/theme.js";
 
 const App = () => {
   const [cardType,setCardType] = useState('list')
 
   const mode = useSelector(state => state.theme.mode)
-  const theme = getTheme(mode)
+  
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={mode === 'dark' ? darkTheme : lightTheme}>
       <CssBaseline />
       <main className='max-w-7xl py-4 px-4 ms:px-8 lg:px-12'>
         <Routes>

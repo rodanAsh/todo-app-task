@@ -1,6 +1,6 @@
 import { Button, InputLabel, TextField, Typography } from '@mui/material'
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { login } from '../store/authSlice'
 import { useNavigate } from 'react-router-dom'
 
@@ -13,6 +13,8 @@ const Login = () => {
     const [passwordError,setPasswordError] = useState("")
     const dispatch = useDispatch()
     const navigate = useNavigate()
+
+    const mode = useSelector(state => state.theme.mode)
 
     const handleChange = (e) => {
         const name = e.target.name;
@@ -57,30 +59,30 @@ const Login = () => {
   return (
     <section className='h-screen flex items-center justify-center'>
             <form 
-                className='bg-white p-4 rounded-md flex flex-col max-w-[360px] md:min-w-[500px]'
+                className={`bg-white ${mode === 'light' ? "bg-[#181818]":""}  p-4 rounded-md flex flex-col max-w-[360px] md:min-w-[500px]`}
                 onSubmit={handleSubmit}
             >
-                <InputLabel>Email</InputLabel>
+                <label className={`${mode === 'dark' ? "text-black" : ""} text-white font-semibold`}>Email</label>
                 <Typography color='error'>{emailError}</Typography>
-                <TextField
+                <input
                     name="email"
                     type='email'
-                    color='success'
                     value={loginData.email}
                     onChange={handleChange}
+                    className={`${mode === 'dark' ? "border-[1px] border-black" : ""} px-4 py-2 rounded-md outline-green-500`}
                 />
                 <br />
-                <InputLabel>Password</InputLabel>
+                <label className={`${mode === 'dark' ? "text-black" : "" } text-white font-semibold`}>Password</label>
                 <Typography color='error'>{passwordError}</Typography>
-                <TextField 
+                <input
                     name="password"
                     type='password'
-                    color='success'
                     value={loginData.password}
                     onChange={handleChange}
+                    className={`${mode === 'dark' ? "border-[1px] border-black" : ""} px-4 py-2 rounded-md outline-green-500`}
                 />
                 <br />
-                <Button type='submit' sx={{width:'fit-content',mx:'auto'}} className='mx-auto' variant='contained' color='success'>Login</Button>
+                <Button type='submit' sx={{width:'fit-content',mx:'auto',color:"#FFFFFF"}} className='mx-auto' variant='contained' color='success'>Login</Button>
             </form>  
     </section>
   )

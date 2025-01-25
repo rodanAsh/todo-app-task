@@ -64,7 +64,7 @@ const TaskInput = () => {
                 <option value="medium">Medium</option>
                 <option value="high">High</option>
             </select>
-            <button type='submit' className={`px-4 py-2 bg-green-500 rounded-md mx-auto mt-5 ${mode==='light' ? "text-white" : ""}`}>Add Task</button>
+            <button type='submit' className={`px-4 py-2 bg-green-500 rounded-md mx-auto mt-5 text-white`}>Add Task</button>
         </form>
     </section>
   )
