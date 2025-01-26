@@ -37,6 +37,7 @@ Run the app in development mode:
 npm start
 
 Open your browser and navigate to http://localhost:3000.
+```
 
 ## 🛠️ Usage
 
