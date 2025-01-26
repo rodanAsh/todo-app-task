@@ -58,7 +58,7 @@ Open your browser and navigate to http://localhost:3000.
 
 ## 🌈 Local Storage Integration
 
--Todos Persistence
+# Todos Persistence
 - The tasksSlice in Redux automatically syncs todos with local storage on every update.
 - When the app loads, tasks are retrieved from local storage and initialized in the Redux state.
 - Theme Persistence
