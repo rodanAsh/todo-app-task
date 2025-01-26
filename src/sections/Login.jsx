@@ -59,8 +59,8 @@ const Login = () => {
   return (
     <section className="h-screen flex items-center justify-center">
       <form
-        className={`bg-white ${
-          mode === "light" ? "bg-slate-950" : ""
+        className={`${
+          mode === "light" ? "bg-slate-950" : "bg-white"
         } p-4 rounded-md flex flex-col max-w-[360px] md:min-w-[500px]`}
         onSubmit={handleSubmit}
       >
