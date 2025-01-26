@@ -60,14 +60,14 @@ const Login = () => {
     <section className="h-screen flex items-center justify-center">
       <form
         className={`bg-white ${
-          mode === "light" ? "bg-[#181818]" : ""
-        }  p-4 rounded-md flex flex-col max-w-[360px] md:min-w-[500px]`}
+          mode === "light" ? "bg-slate-950" : ""
+        } p-4 rounded-md flex flex-col max-w-[360px] md:min-w-[500px]`}
         onSubmit={handleSubmit}
       >
         <label
           className={`${
-            mode === "dark" ? "text-black" : ""
-          } text-white font-semibold`}
+            mode === "dark" ? "text-slate-950" : "text-white"
+          } font-semibold`}
         >
           Email
         </label>
@@ -78,14 +78,14 @@ const Login = () => {
           value={loginData.email}
           onChange={handleChange}
           className={`${
-            mode === "dark" ? "border-[1px] border-black" : ""
+            mode === "dark" ? "border-[1px] border-black text-slate-950" : ""
           } px-4 py-2 rounded-md outline-green-500`}
         />
         <br />
         <label
           className={`${
-            mode === "dark" ? "text-black" : ""
-          } text-white font-semibold`}
+            mode === "dark" ? "text-slate-950" : "text-white"
+          } font-semibold`}
         >
           Password
         </label>
@@ -96,7 +96,7 @@ const Login = () => {
           value={loginData.password}
           onChange={handleChange}
           className={`${
-            mode === "dark" ? "border-[1px] border-black" : ""
+            mode === "dark" ? "border-[1px] border-black text-slate-950" : ""
           } px-4 py-2 rounded-md outline-green-500`}
         />
         <br />
